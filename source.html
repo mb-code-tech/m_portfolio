@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mansi's Growth Story</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    /* Navbar */
+    .navbar-nav .nav-link.active {
+      color: #00b4d8 !important;
+      font-weight: bold;
+    }
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+    .carousel-item img {
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .carousel-caption {
+      bottom: 35%;
+      text-align: center;
+    }
+    .carousel-caption h2, .carousel-caption p {
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+    /* Sections */
+    section {
+      padding: 4rem 1rem;
+    }
+    .alt-bg { background: #f8f9fa; }
+    .dark-bg { background: linear-gradient(135deg, #232526, #414345); color: white; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #00b4d8;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+    }
+    .timeline-item.left { left: 0; text-align: right; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item .icon {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+      color: #00b4d8;
+    }
+    @media (max-width: 768px) {
+      .timeline::before { left: 8px; }
+      .timeline-item { width: 100%; left: 0 !important; text-align: left; padding-left: 2.5rem; }
+    }
+
+
+    /* Vision */
+    .vision {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .vision::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -50%; width: 200%; height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 70%);
+      animation: moveGlow 8s linear infinite;
+    }
+    @keyframes moveGlow { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+
+    /* Cards */
+    .hobby-card img, .achievement-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .card:hover { transform: translateY(-5px); transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+    /* Contact */
+    .contact-card {
+      background: #f8f9fa;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .contact-links a { text-decoration: none; font-weight: bold; color: #0096c7; }
+
+    footer { background: #111; color: white; text-align: center; padding: 1rem; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Story</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vision">Future</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beyond">Beyond</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <header class="hero-section">
+    <div id="journeyCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow-lg">
+        <div class="carousel-item active">
+          <img src="img\beautiful-view-bokaro-steel-plant.jpg" class="d-block w-100" alt="Bokaro Steel City skyline">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+            <h2 class="display-5 fw-bold">From Bokaro Steel City</h2>
+            <p class="lead">Where it all began — roots, values, and the spark of curiosity.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img\iter.jpg" class="d-block w-100" alt="Bhubaneswar SOA University campus">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+            <h2 class="display-5 fw-bold">...to Bhubaneswar</h2>
+            <p class="lead">At SOA University — exploring, learning, and growing as a Computer Science engineer.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#journeyCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#journeyCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="alt-bg">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up"><i class="fa-solid fa-user"></i> About Me</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center" data-aos="fade-right">
+          <img src="img\me.jpg"
+     class="rounded-circle shadow"
+     alt="Portrait of Mansi Baranwal"
+     style="max-height: 250px; width: auto; object-fit: cover;">
+
+        </div>
+        <div class="col-md-8" data-aos="fade-left">
+         <p>I like to think of myself as a curious explorer — someone who has always looked at the world with optimism and an eagerness to learn. From an early fascination with computers to stepping into new environments, cultures, and experiences, my journey has been about moving beyond comfort zones and embracing growth.</p>
+<p>Engineering became a natural choice for me, not just as a career path but as a way to channel creativity and curiosity into building real solutions. Along the way, I have faced setbacks and challenges, but each one strengthened my resilience and commitment to keep moving forward. I thrive in teamwork, but I am equally confident working on my own — consistent, responsible, and dedicated to the work I take on.</p>
+<p>Over time, that spark of curiosity has grown into a passion for creating meaningful contributions through technology. Through research, projects, and continuous learning, I strive to grow as an engineer who turns ideas into progress and builds a journey that reflects resilience, innovation, and purpose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up"><i class="fa-solid fa-road"></i> My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="icon"><i class="fa-solid fa-school"></i></div>
+          <h4>Schooling</h4>
+          <p>My journey began with high school—a place where I discovered my passions, built my first successes, and learned the art of persistence. This chapter concluded in 2022 , but its lessons travel with me always.</p>
+        </div>
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h4>College</h4>
+          <p>B.Tech in Computer Science & Engineering at SOA University — my chosen adventure into logic, code, and creativity.</p>
+        </div>
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="icon"><i class="fa-solid fa-globe"></i></div>
+          <h4>International Conferences</h4>
+          <p>Presented work at ISAC3 2025 and ICCOICC 2025, reflecting teamwork and dedication.</p>
+        </div>
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h4>Placement</h4>
+          <p>Every ending is a new beginning—high school to college to now <strong> GyanSys </strong>. Grateful for the journey so far, excited for what’s ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="skills" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">
+      <i class="fas fa-laptop-code me-2 text-primary"></i> My Skill Arsenal 🚀
+    </h2>
+
+    <div class="row g-4 text-center">
+
+      <!-- Languages -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in">
+        <div class="p-4 bg-white shadow rounded h-100 skill-card">
+          <i class="fas fa-code fa-2x text-danger mb-3"></i>
+          <h5 class="fw-bold">Coding Tongues 💻</h5>
+          <p>Python • Java • C • C++</p>
+        </div>
+      </div>
+
+      <!-- Web Tech -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in">
+        <div class="p-4 bg-white shadow rounded h-100 skill-card">
+          <i class="fas fa-globe fa-2x text-success mb-3"></i>
+          <h5 class="fw-bold">Web Spells 🌐</h5>
+          <p>HTML • CSS • JavaScript</p>
+        </div>
+      </div>
+
+      <!-- ML Frameworks -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in">
+        <div class="p-4 bg-white shadow rounded h-100 skill-card">
+          <i class="fas fa-robot fa-2x text-info mb-3"></i>
+          <h5 class="fw-bold">AI Wizards 🤖</h5>
+          <p>TensorFlow • PyTorch • Scikit-learn</p>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in">
+        <div class="p-4 bg-white shadow rounded h-100 skill-card">
+          <i class="fas fa-tools fa-2x text-warning mb-3"></i>
+          <h5 class="fw-bold">Dev Tools ⚙️</h5>
+          <p>Docker • Jenkins • Kubernetes • Jira • Git • GitHub • VS Code</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Skills Row -->
+    <div class="row mt-5">
+      <div class="col text-center" data-aos="fade-up">
+        <h5 class="fw-bold mb-3">
+          <i class="fas fa-users me-2 text-primary"></i>Human Superpowers 🌟
+        </h5>
+        <span class="badge bg-primary m-1 p-2">Problem-Solver</span>
+        <span class="badge bg-success m-1 p-2">Critical Thinker</span>
+        <span class="badge bg-warning m-1 p-2">Team Player</span>
+        <span class="badge bg-info text-dark m-1 p-2">Adaptable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+</style>
+
+  <!-- Achievements -->
+  <section id="achievements" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4"><i class="fas fa-trophy me-2"></i>Achievements</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card h-100 shadow-sm">
+            <img src="img\presentation.jpg" class="card-img-top achievement-img" alt="Research Presentation">
+            <div class="card-body">
+              <h5 class="card-title">Published & Presented Research</h5>
+              <p class="card-text">Presented papers at <b>ISAC3 2025</b> & <b>ICCOICC 2025</b>. <a href="your-paper-link" target="_blank">Read Paper</a></p>
+            </div>
+          </div>
+        </div>
+    <div class="col-md-4" data-aos="flip-left">
+  <div class="card h-100 shadow-sm text-center">
+    
+    <!-- PwC Banner -->
+    <img src="img\Banner.jpg"
+         class="card-img-top achievement-img mb-2" 
+         alt="PwC Training Banner"; object-fit: cover;">
+
+    <!-- Broadridge Banner -->
+    <img src="img\Broadridge.jpg"
+         class="card-img-top achievement-img mb-2" 
+         alt="Broadridge Training Banner"; object-fit: cover;">
+
+    <div class="card-body">
+      <h5 class="card-title">Training Highlights</h5>
+      <p class="card-text">
+        <b>PwC</b> (Cloud Technology & Development Program – Salesforce & Cloud Platforms).  
+        <span class="badge bg-success ms-2">Ongoing</span><br>
+        <b>Broadridge</b> (Agile + DevOps exposure).
+      </p>
+    </div>
+  </div>
+</div>
+
+       
+
+              
+<div class="col-md-4" data-aos="fade-left">
+<div class="card h-100 shadow-sm">
+<img src="img\team.jpg" class="card-img-top" alt="Team Collaboration">
+<div class="card-body">
+  <h5 class="card-title">Collaboration & Problem-Solving</h5>
+  <p class="card-text">
+    Collaborated with peers on innovative solutions by combining diverse ideas, coding skills, and structured teamwork. 
+    These experiences not only strengthened my technical foundation but also taught me the value of adaptability, 
+    resilience, and critical thinking in solving real-world problems.
+  </p>
+</div>
+</div>
+</div>
+        
+
+      </div>
+    </div>
+</section>
+<section id="vision" class="py-5 vision-section text-white">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">
+      <i class="fas fa-eye me-2"></i> My Vision 🌟
+    </h2>
+
+    <div class="row g-4">
+      <!-- Vision Card 1 -->
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="p-4 rounded shadow-lg vision-card h-100">
+          <i class="fas fa-lightbulb fa-2x mb-3 text-warning"></i>
+          <h4 class="fw-bold">Innovator at Heart</h4>
+          <p>
+            I aspire to harness technology to craft innovative solutions that solve 
+            real-world challenges. My journey is fueled by curiosity, resilience, 
+            and the drive to turn ideas into impactful outcomes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vision Card 2 -->
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="p-4 rounded shadow-lg vision-card h-100">
+          <i class="fas fa-rocket fa-2x mb-3 text-danger"></i>
+          <h4 class="fw-bold">Growth & Exploration</h4>
+          <p>
+           My vision is to continuously grow by strengthening my core technical expertise, 
+      embracing new challenges, and collaborating with diverse teams. I aim to explore 
+      opportunities where I can learn, adapt quickly, and contribute meaningfully—while 
+      aligning with the organization’s goals and long-term vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Background with gradient + subtle overlay */
+.vision-section {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional animated background shapes */
+.vision-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.1;
+  animation: moveBackground 60s linear infinite;
+}
+
+@keyframes moveBackground {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-500px, -500px); }
+}
+
+/* Vision card styling */
+.vision-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+.vision-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+</style>
+
+ <!-- Beyond Work -->
+<section id="beyond" class="alt-bg py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" data-aos="fade-up">
+      <i class="fa-solid fa-star text-warning"></i> A Glimpse into My World Beyond Code ✨
+    </h2>
+    <p class="text-center mb-5 text-muted" data-aos="fade-up" style="max-width: 700px; margin: 0 auto;">
+      Life isn’t just about writing code — it’s also about fueling creativity, 
+      embracing adventure, and finding inspiration in unexpected places.  
+      Here’s what keeps me motivated beyond the screen:
+    </p>
+
+    <div class="row g-4">
+      <!-- Travel & Riding -->
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="card hobby-card shadow h-100">
+          <img src="img\bike.jpg" class="card-img-top" alt="Bike rider on road">
+          <div class="card-body">
+            <h5 class="card-title">Explorer on Wheels 🏍️</h5>
+            <p class="card-text">
+              Long rides and solo journeys taught me resilience, independence, and 
+              the thrill of discovering new horizons.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dance -->
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card hobby-card shadow h-100">
+          <img src="img\dance.jpg" class="card-img-top" alt="Dancer performing on stage">
+          <div class="card-body">
+            <h5 class="card-title">Dance Enthusiast 💃</h5>
+            <p class="card-text">
+              Dance fuels my creativity — a space where rhythm meets imagination 
+              and self-expression knows no limits.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sketching -->
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="card hobby-card shadow h-100">
+          <img src="img\sketch.jpeg" class="card-img-top" alt="Sketchbook art">
+          <div class="card-body">
+            <h5 class="card-title">Artistic Soul 🎨</h5>
+            <p class="card-text">
+              Sketching lets me pause, observe, and capture beauty in everyday 
+              moments — it’s my mindful escape from routine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section py-5 text-white">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">
+      <i class="fa-solid fa-envelope-open-text me-2"></i> Let’s Connect 🌐
+    </h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="contact-card text-center p-4 shadow-lg rounded" data-aos="zoom-in">
+          <h5 class="fw-bold mb-3">📩 Email Me</h5>
+          <p>
+            <a href="mailto:mansibaranwal2004@gmail.com" class="text-white text-decoration-underline">
+              mansibaranwal2004@gmail.com
+            </a>
+          </p>
+
+          <h5 class="fw-bold mt-4 mb-3">💼 LinkedIn</h5>
+          <p class="contact-links">
+            <a href="https://www.linkedin.com/in/mansi~baranwal" target="_blank" class="text-white text-decoration-underline">
+              linkedin.com/in/mansi~baranwal
+            </a>
+          </p>
+
+          <!-- Resume Button -->
+          <a href="https://drive.google.com/file/d/1YLwm3dQSCQyyXSpRMXZtZ3w5kJ4oZxGq/view?usp=drivesdk" target="_blank" class="btn btn-light btn-lg mt-4 shadow-sm">
+            <i class="fa-solid fa-file-pdf me-2"></i> Download My Resume
+          </a>
+
+          <p class="mt-4 fst-italic">
+            ✨ Always open to ideas, collaborations, and meaningful conversations!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-3 text-center text-white footer-bg">
+  <p class="mb-0">&copy; 2025 Mansi Baranwal | My Growth Story 🚀</p>
+</footer>
+
+<style>
+/* Contact Section Background */
+.contact-section {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating gradient shapes */
+.contact-section::before, .contact-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  animation: floatShapes 20s infinite linear;
+}
+.contact-section::before {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+.contact-section::after {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: -80px;
+}
+
+@keyframes floatShapes {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glassmorphism Contact Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+.footer-bg {
+  background: #1f1c2c;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+</style>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
